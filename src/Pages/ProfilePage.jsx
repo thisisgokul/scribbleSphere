@@ -28,7 +28,7 @@ const ProfilePage = () => {
     const fetchProfile = async () => {
       try {
         const { data } = await axios.get("/api/profile");
-        console.log(data);
+       
         if (!data) {
           navigate("/login");
         }

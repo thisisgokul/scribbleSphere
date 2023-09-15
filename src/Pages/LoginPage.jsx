@@ -19,6 +19,7 @@ const LoginPage = () => {
         email,
         password,
       });
+      console.log("dta",data);
       dispatch(login(data));
       alert("login successfull");
       navigate("/");

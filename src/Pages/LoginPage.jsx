@@ -13,20 +13,23 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const { data } = await axios.post("/api/login", {
         email,
         password,
+      }, {
+        withCredentials: true,  
       });
-      console.log("dta",data);
+      
       dispatch(login(data));
-      alert("login successfull");
+      alert("Login successful");
       navigate("/");
     } catch (error) {
       console.error("Error logging in:", error);
     }
   };
+  
 
   return (
     <div>
